@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>TaskOps Solutions</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
 body{
 margin:0;
 font-family:Arial;
@@ -9,10 +22,16 @@ nav{
 display:flex;
 justify-content:space-between;
 padding:20px 60px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+background:#020617;
 position:sticky;
 top:0;
+z-index:10;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
 }
 
 .logo{
@@ -20,35 +39,43 @@ font-size:22px;
 font-weight:bold;
 }
 
-.menu a{
-color:white;
-margin-left:25px;
-text-decoration:none;
+/* SLIDER */
+
+.slider{
+height:80vh;
+position:relative;
+overflow:hidden;
 }
 
-.hero{
-height:90vh;
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#2563eb,#9333ea);
+animation:fade 12s infinite;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
+.slide h1{
+background:rgba(0,0,0,0.6);
+padding:20px 40px;
+border-radius:10px;
 }
 
-.hero button{
-margin-top:20px;
-padding:12px 30px;
-border:none;
-border-radius:8px;
-background:white;
-color:#2563eb;
-font-weight:bold;
-cursor:pointer;
+.slide1{background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');}
+.slide2{background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b');animation-delay:4s;}
+.slide3{background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');animation-delay:8s;}
+
+@keyframes fade{
+0%{opacity:0}
+10%{opacity:1}
+30%{opacity:1}
+40%{opacity:0}
+100%{opacity:0}
 }
 
 .container{
@@ -66,35 +93,64 @@ margin-top:40px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:#1e293b;
 padding:30px;
-border-radius:12px;
+border-radius:10px;
 transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-background:rgba(255,255,255,0.1);
 }
+
+.card i{
+font-size:40px;
+margin-bottom:15px;
+color:#60a5fa;
+}
+
+/* CLIENTS */
 
 .clients{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:20px;
 margin-top:40px;
-font-weight:bold;
+}
+
+.clients img{
+width:120px;
 opacity:0.8;
 }
 
+/* TESTIMONIALS */
+
 .testimonial{
-background:rgba(255,255,255,0.05);
+background:#1e293b;
 padding:25px;
 border-radius:10px;
 }
 
+.testimonial img{
+width:70px;
+height:70px;
+border-radius:50%;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
 .contact{
 background:#1e293b;
+padding:60px;
 border-radius:10px;
+}
+
+iframe{
+width:100%;
+height:350px;
+border:0;
+margin-top:30px;
 }
 
 footer{
@@ -102,3 +158,161 @@ text-align:center;
 padding:20px;
 background:#020617;
 }
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">TaskOps Solutions</div>
+
+<div>
+
+<a href="#services">Services</a> <a href="#clients">Clients</a> <a href="#testimonials">Testimonials</a> <a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+<section class="slider">
+
+<div class="slide slide1">
+<h1>We Build Powerful Software</h1>
+</div>
+
+<div class="slide slide2">
+<h1>AI Automation & Cloud Solutions</h1>
+</div>
+
+<div class="slide slide3">
+<h1>Scale Your Business Technology</h1>
+</div>
+
+</section>
+
+<section class="container" id="services">
+
+<h2>Our Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-code"></i>
+<h3>Software Development</h3>
+<p>Custom enterprise applications.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-globe"></i>
+<h3>Web Development</h3>
+<p>Modern responsive websites.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-mobile"></i>
+<h3>Mobile Apps</h3>
+<p>Android & iOS applications.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-cloud"></i>
+<h3>Cloud Services</h3>
+<p>Scalable infrastructure.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-robot"></i>
+<h3>AI & Automation</h3>
+<p>Machine learning solutions.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-shield-alt"></i>
+<h3>Cybersecurity</h3>
+<p>Enterprise security services.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="container" id="clients">
+
+<h2>Trusted Companies</h2>
+
+<div class="clients">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg">
+
+</div>
+
+</section>
+
+<section class="container" id="testimonials">
+
+<h2>Client Testimonials</h2>
+
+<div class="grid">
+
+<div class="testimonial">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<p>"TaskOps automated our workflow and improved productivity."</p>
+
+<b>Rahul Sharma</b>
+
+</div>
+
+<div class="testimonial">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<p>"Excellent team for cloud and AI solutions."</p>
+
+<b>Sarah Johnson</b>
+
+</div>
+
+<div class="testimonial">
+
+<img src="https://randomuser.me/api/portraits/men/22.jpg">
+
+<p>"Highly professional enterprise development team."</p>
+
+<b>David Lee</b>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email: contact@taskopssolutions.com</p>
+
+<p>Phone: +91 XXXXX XXXXX</p>
+
+<iframe src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</section>
+
+<footer>
+
+© 2026 TaskOps Solutions
+
+</footer>
+
+</body>
+
+</html>
