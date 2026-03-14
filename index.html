@@ -11,96 +11,110 @@
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Arial;
-background:#0f172a;
+background:#020617;
 color:white;
 }
+
+/* HEADER */
 
 nav{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 60px;
 background:#020617;
 position:sticky;
 top:0;
-z-index:10;
-}
-
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
+z-index:100;
 }
 
 .logo{
-font-size:22px;
+font-size:24px;
 font-weight:bold;
+color:#60a5fa;
 }
 
-/* SLIDER */
-
-.slider{
-height:80vh;
-position:relative;
-overflow:hidden;
+.menu a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-size:15px;
 }
 
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
+/* HERO */
+
+.hero{
+height:90vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-animation:fade 12s infinite;
+background:linear-gradient(135deg,#2563eb,#9333ea);
+padding:20px;
 }
 
-.slide h1{
-background:rgba(0,0,0,0.6);
-padding:20px 40px;
-border-radius:10px;
+.hero h1{
+font-size:52px;
+margin-bottom:20px;
 }
 
-.slide1{background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');}
-.slide2{background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b');animation-delay:4s;}
-.slide3{background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');animation-delay:8s;}
-
-@keyframes fade{
-0%{opacity:0}
-10%{opacity:1}
-30%{opacity:1}
-40%{opacity:0}
-100%{opacity:0}
+.hero p{
+font-size:20px;
+max-width:700px;
 }
+
+.hero button{
+margin-top:30px;
+padding:14px 30px;
+border:none;
+border-radius:8px;
+background:white;
+color:#2563eb;
+font-size:16px;
+cursor:pointer;
+}
+
+/* SECTIONS */
 
 .container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
-padding:80px 20px;
+padding:90px 20px;
 text-align:center;
 }
+
+h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+/* SERVICES */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:40px;
 }
 
 .card{
-background:#1e293b;
-padding:30px;
-border-radius:10px;
+background:#0f172a;
+padding:35px;
+border-radius:12px;
 transition:0.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
+background:#1e293b;
 }
 
 .card i{
@@ -109,25 +123,33 @@ margin-bottom:15px;
 color:#60a5fa;
 }
 
-/* CLIENTS */
+/* PROJECTS */
+
+.project img{
+width:100%;
+border-radius:10px;
+}
+
+/* CLIENT LOGOS */
 
 .clients{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
 margin-top:40px;
 }
 
 .clients img{
 width:120px;
-opacity:0.8;
+opacity:0.7;
 }
 
 /* TESTIMONIALS */
 
 .testimonial{
-background:#1e293b;
-padding:25px;
+background:#0f172a;
+padding:30px;
 border-radius:10px;
 }
 
@@ -135,28 +157,84 @@ border-radius:10px;
 width:70px;
 height:70px;
 border-radius:50%;
-margin-bottom:10px;
+margin-bottom:15px;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#2563eb,#9333ea);
+padding:70px 20px;
+text-align:center;
+}
+
+.cta h2{
+margin-bottom:20px;
+}
+
+.cta button{
+padding:14px 30px;
+border:none;
+background:white;
+color:#2563eb;
+border-radius:8px;
 }
 
 /* CONTACT */
 
 .contact{
-background:#1e293b;
-padding:60px;
+background:#0f172a;
+padding:70px;
 border-radius:10px;
 }
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+.contact button{
+padding:12px 20px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:5px;
+}
+
+/* MAP */
 
 iframe{
 width:100%;
 height:350px;
-border:0;
 margin-top:30px;
+border:0;
 }
+
+/* FOOTER */
 
 footer{
 text-align:center;
 padding:20px;
 background:#020617;
+margin-top:60px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+}
+
+.hero h1{
+font-size:36px;
+}
+
 }
 
 </style>
@@ -169,34 +247,24 @@ background:#020617;
 
 <div class="logo">TaskOps Solutions</div>
 
-<div class="menu" id="menu">
+<div class="menu">
 
-<a href="#services">Services</a> <a href="#clients">Clients</a> <a href="#testimonials">Testimonials</a> <a href="#contact">Contact</a>
-
-</div>
-
-<div class="hamburger" onclick="toggleMenu()">
-
-<i class="fas fa-bars"></i>
+<a href="#services">Services</a> <a href="#projects">Projects</a> <a href="#clients">Clients</a> <a href="#contact">Contact</a>
 
 </div>
 
 </nav>
 
+<section class="hero">
 
-<section class="slider">
+<h1>Build Scalable Digital Products</h1>
 
-<div class="slide slide1">
-<h1>We Build Powerful Software</h1>
-</div>
+<p>
+We help startups and businesses build software,
+automation platforms and cloud systems.
+</p>
 
-<div class="slide slide2">
-<h1>AI Automation & Cloud Solutions</h1>
-</div>
-
-<div class="slide slide3">
-<h1>Scale Your Business Technology</h1>
-</div>
+<button>Start Your Project</button>
 
 </section>
 
@@ -208,38 +276,54 @@ background:#020617;
 
 <div class="card">
 <i class="fas fa-code"></i>
-<h3>Software Development</h3>
-<p>Custom enterprise applications.</p>
+<h3>Custom Software</h3>
 </div>
 
 <div class="card">
 <i class="fas fa-globe"></i>
-<h3>Web Development</h3>
-<p>Modern responsive websites.</p>
+<h3>Web Applications</h3>
 </div>
 
 <div class="card">
 <i class="fas fa-mobile"></i>
 <h3>Mobile Apps</h3>
-<p>Android & iOS applications.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-cloud"></i>
-<h3>Cloud Services</h3>
-<p>Scalable infrastructure.</p>
+<h3>Cloud Solutions</h3>
 </div>
 
 <div class="card">
 <i class="fas fa-robot"></i>
-<h3>AI & Automation</h3>
-<p>Machine learning solutions.</p>
+<h3>AI Automation</h3>
 </div>
 
 <div class="card">
 <i class="fas fa-shield-alt"></i>
 <h3>Cybersecurity</h3>
-<p>Enterprise security services.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="container" id="projects">
+
+<h2>Recent Projects</h2>
+
+<div class="grid">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 </div>
 
 </div>
@@ -253,16 +337,18 @@ background:#020617;
 <div class="clients">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg">
 
 </div>
 
 </section>
 
-<section class="container" id="testimonials">
+<section class="container">
 
 <h2>Client Testimonials</h2>
 
@@ -272,7 +358,7 @@ background:#020617;
 
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
 
-<p>"TaskOps automated our workflow and improved productivity."</p>
+<p>"TaskOps built our automation platform and saved hundreds of hours."</p>
 
 <b>Rahul Sharma</b>
 
@@ -282,19 +368,9 @@ background:#020617;
 
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
 
-<p>"Excellent team for cloud and AI solutions."</p>
+<p>"Professional AI and cloud development services."</p>
 
 <b>Sarah Johnson</b>
-
-</div>
-
-<div class="testimonial">
-
-<img src="https://randomuser.me/api/portraits/men/22.jpg">
-
-<p>"Highly professional enterprise development team."</p>
-
-<b>David Lee</b>
 
 </div>
 
@@ -302,13 +378,29 @@ background:#020617;
 
 </section>
 
+<section class="cta">
+
+<h2>Ready to Build Your Next Product?</h2>
+
+<button>Contact Us</button>
+
+</section>
+
 <section class="container contact" id="contact">
 
 <h2>Contact Us</h2>
 
-<p>Email: contact@taskopssolutions.com</p>
+<form>
 
-<p>Phone: +91 XXXXX XXXXX</p>
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="4" placeholder="Project Details"></textarea>
+
+<button>Send Message</button>
+
+</form>
 
 <iframe src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 
