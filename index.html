@@ -7,7 +7,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
@@ -23,18 +24,19 @@ background:white;
 color:#1e293b;
 }
 
-/* HEADER */
+/* NAVBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(10px);
 position:sticky;
 top:0;
 z-index:100;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 .logo{
@@ -53,24 +55,24 @@ font-weight:500;
 /* HERO */
 
 .hero{
-height:85vh;
+height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(to right,#2563eb,#3b82f6);
+background:linear-gradient(135deg,#2563eb,#3b82f6);
 color:white;
 padding:20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:56px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
+font-size:20px;
 max-width:700px;
 }
 
@@ -81,7 +83,7 @@ border:none;
 background:white;
 color:#2563eb;
 font-weight:bold;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
 }
 
@@ -95,7 +97,7 @@ text-align:center;
 }
 
 h2{
-font-size:36px;
+font-size:38px;
 margin-bottom:40px;
 }
 
@@ -112,8 +114,8 @@ gap:30px;
 .card{
 background:white;
 padding:35px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
@@ -127,20 +129,40 @@ color:#2563eb;
 margin-bottom:15px;
 }
 
+/* STATS */
+
+.stats{
+background:#2563eb;
+color:white;
+padding:70px 20px;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+max-width:1000px;
+margin:auto;
+}
+
+.stat h3{
+font-size:40px;
+}
+
 /* PROJECTS */
 
 .project img{
 width:100%;
-border-radius:8px;
+border-radius:10px;
 }
 
-/* CLIENTS */
+/* CLIENT LOGOS */
 
 .clients{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:40px;
+gap:50px;
 margin-top:30px;
 }
 
@@ -164,11 +186,29 @@ border-radius:50%;
 margin-bottom:15px;
 }
 
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+.cta button{
+padding:14px 30px;
+border:none;
+background:white;
+color:#2563eb;
+border-radius:6px;
+font-weight:bold;
+}
+
 /* CONTACT */
 
 .contact{
 background:#f1f5f9;
-padding:60px;
+padding:70px;
 border-radius:10px;
 }
 
@@ -215,7 +255,7 @@ flex-direction:column;
 }
 
 .hero h1{
-font-size:34px;
+font-size:38px;
 }
 
 }
@@ -240,11 +280,11 @@ font-size:34px;
 
 <section class="hero">
 
-<h1>We Build Digital Products for Businesses</h1>
+<h1>Build Scalable Digital Products</h1>
 
 <p>
-Custom software development, automation systems,
-and scalable cloud platforms for modern companies.
+Custom software development, automation platforms,
+and modern cloud infrastructure.
 </p>
 
 <button>Start Your Project</button>
@@ -260,37 +300,59 @@ and scalable cloud platforms for modern companies.
 <div class="card">
 <i class="fas fa-code"></i>
 <h3>Custom Software</h3>
-<p>Enterprise software tailored to your business.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-globe"></i>
 <h3>Web Applications</h3>
-<p>Modern responsive web applications.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-mobile"></i>
 <h3>Mobile Apps</h3>
-<p>Android and iOS app development.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-cloud"></i>
 <h3>Cloud Solutions</h3>
-<p>Secure and scalable cloud infrastructure.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-robot"></i>
 <h3>AI Automation</h3>
-<p>Machine learning and automation systems.</p>
 </div>
 
 <div class="card">
 <i class="fas fa-shield-alt"></i>
 <h3>Cybersecurity</h3>
-<p>Protect business systems and data.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h3>50+</h3>
+<p>Projects Delivered</p>
+</div>
+
+<div class="stat">
+<h3>20+</h3>
+<p>Global Clients</p>
+</div>
+
+<div class="stat">
+<h3>5+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Support</p>
 </div>
 
 </div>
@@ -347,7 +409,7 @@ and scalable cloud platforms for modern companies.
 
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
 
-<p>"TaskOps delivered our automation platform quickly and professionally."</p>
+<p>"TaskOps delivered our automation platform efficiently."</p>
 
 <b>Rahul Sharma</b>
 
@@ -357,13 +419,21 @@ and scalable cloud platforms for modern companies.
 
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
 
-<p>"Excellent team for building cloud-based software systems."</p>
+<p>"Excellent team for building cloud systems."</p>
 
 <b>Sarah Johnson</b>
 
 </div>
 
 </div>
+
+</section>
+
+<section class="cta">
+
+<h2>Ready to Start Your Project?</h2>
+
+<button>Contact Us</button>
 
 </section>
 
