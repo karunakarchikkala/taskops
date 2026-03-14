@@ -22,9 +22,8 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#ffffff;
+background:white;
 color:#111827;
-overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -34,9 +33,9 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
+background:white;
 position:sticky;
 top:0;
-background:white;
 z-index:100;
 }
 
@@ -50,73 +49,73 @@ color:#2563eb;
 margin-left:25px;
 text-decoration:none;
 color:#111827;
-font-weight:500;
 }
 
-/* HERO */
+/* HERO SLIDER */
 
 .hero{
-min-height:90vh;
+height:90vh;
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
 color:white;
-position:relative;
-overflow:hidden;
+background-size:cover;
+background-position:center;
+animation:slide 12s infinite;
 }
 
-.hero h1{
-font-size:64px;
-max-width:900px;
-line-height:1.1;
+.slide1{
+background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
 }
 
-.hero p{
-margin-top:20px;
-font-size:20px;
-max-width:650px;
+.slide2{
+background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b');
+animation-delay:4s;
 }
 
-.hero button{
-margin-top:30px;
-padding:14px 30px;
-border:none;
-border-radius:50px;
-background:white;
-color:#2563eb;
-font-weight:600;
-cursor:pointer;
+.slide3{
+background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71');
+animation-delay:8s;
 }
 
-/* FLOATING BLOBS */
-
-.blob{
-position:absolute;
-width:400px;
-height:400px;
-background:rgba(255,255,255,0.2);
-border-radius:50%;
-filter:blur(120px);
+.slide h1{
+font-size:60px;
+background:rgba(0,0,0,0.5);
+padding:20px;
+border-radius:10px;
 }
 
-.blob1{top:-100px;left:-100px;}
-.blob2{bottom:-100px;right:-100px;}
+@keyframes slide{
 
-/* SECTION */
+0%{opacity:0}
+10%{opacity:1}
+30%{opacity:1}
+40%{opacity:0}
+100%{opacity:0}
+
+}
+
+/* SECTIONS */
 
 .section{
 max-width:1200px;
 margin:auto;
-padding:120px 20px;
+padding:100px 20px;
 text-align:center;
 }
 
 .section h2{
-font-size:42px;
+font-size:40px;
 margin-bottom:50px;
 }
 
@@ -124,7 +123,7 @@ margin-bottom:50px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
@@ -146,26 +145,39 @@ color:#2563eb;
 margin-bottom:20px;
 }
 
+/* CLIENT LOGO SLIDER */
+
+.logo-slider{
+overflow:hidden;
+white-space:nowrap;
+}
+
+.logo-track{
+display:inline-block;
+animation:scroll 20s linear infinite;
+}
+
+.logo-track img{
+height:50px;
+margin:0 40px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
 /* PORTFOLIO */
 
-.project img{
-width:100%;
-border-radius:15px;
-}
-
-/* CLIENTS */
-
-.clients{
+.projects{
 display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:50px;
-margin-top:40px;
+overflow-x:auto;
+gap:20px;
 }
 
-.clients img{
-width:110px;
-opacity:0.7;
+.projects img{
+width:350px;
+border-radius:15px;
 }
 
 /* TESTIMONIAL */
@@ -180,33 +192,17 @@ border-radius:20px;
 width:70px;
 height:70px;
 border-radius:50%;
-margin-bottom:15px;
-}
-
-/* CTA */
-
-.cta{
-background:linear-gradient(135deg,#2563eb,#7c3aed);
-color:white;
-padding:120px 20px;
-text-align:center;
-}
-
-.cta h2{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.cta button{
-padding:14px 30px;
-border:none;
-border-radius:50px;
-background:white;
-color:#2563eb;
-font-weight:600;
+margin-bottom:10px;
 }
 
 /* CONTACT */
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
 
 .contact input,
 .contact textarea{
@@ -218,7 +214,7 @@ border-radius:8px;
 }
 
 .contact button{
-padding:14px 25px;
+padding:14px 30px;
 border:none;
 background:#2563eb;
 color:white;
@@ -228,7 +224,6 @@ border-radius:8px;
 iframe{
 width:100%;
 height:350px;
-margin-top:30px;
 border:0;
 }
 
@@ -239,6 +234,7 @@ padding:30px;
 text-align:center;
 background:#111827;
 color:white;
+margin-top:60px;
 }
 
 /* MOBILE */
@@ -246,7 +242,11 @@ color:white;
 @media(max-width:768px){
 
 .hero h1{
-font-size:42px;
+font-size:36px;
+}
+
+.contact{
+grid-template-columns:1fr;
 }
 
 nav{
@@ -275,14 +275,17 @@ flex-direction:column;
 
 <section class="hero">
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
+<div class="slide slide1">
+<h1>Build Powerful Software</h1>
+</div>
 
-<h1>Building Modern Software for Future Businesses</h1>
+<div class="slide slide2">
+<h1>AI Automation & Cloud Systems</h1>
+</div>
 
-<p>We design, build and scale digital products using modern technology.</p>
-
-<button>Start Your Project</button>
+<div class="slide slide3">
+<h1>Scale Your Digital Business</h1>
+</div>
 
 </section>
 
@@ -316,37 +319,37 @@ flex-direction:column;
 
 </section>
 
-<section class="section" id="projects">
+<section class="section" id="clients">
 
-<h2>Our Work</h2>
+<h2>Trusted by Companies</h2>
 
-<div class="grid">
+<div class="logo-slider">
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-</div>
+<div class="logo-track">
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
-</div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+
 </div>
 
 </div>
 
 </section>
 
-<section class="section" id="clients">
+<section class="section" id="projects">
 
-<h2>Trusted by Companies</h2>
+<h2>Our Work</h2>
 
-<div class="clients">
+<div class="projects">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
 
 </div>
 
@@ -362,7 +365,7 @@ flex-direction:column;
 
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
 
-<p>"TaskOps delivered our automation platform perfectly."</p>
+<p>"TaskOps delivered an amazing automation platform."</p>
 
 <b>Rahul Sharma</b>
 
@@ -372,7 +375,7 @@ flex-direction:column;
 
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
 
-<p>"Amazing development team and excellent support."</p>
+<p>"Excellent development and cloud architecture."</p>
 
 <b>Sarah Johnson</b>
 
@@ -382,29 +385,31 @@ flex-direction:column;
 
 </section>
 
-<section class="cta">
-
-<h2>Ready to Build Your Product?</h2>
-
-<button>Contact Us</button>
-
-</section>
-
 <section class="section contact" id="contact">
+
+<div>
 
 <h2>Contact Us</h2>
 
 <form>
 
 <input type="text" placeholder="Your Name">
+
 <input type="email" placeholder="Email">
+
 <textarea rows="4" placeholder="Project Details"></textarea>
 
 <button>Send Message</button>
 
 </form>
 
+</div>
+
+<div>
+
 <iframe src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
 
 </section>
 
