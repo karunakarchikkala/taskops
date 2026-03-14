@@ -5,7 +5,9 @@
 
 <title>TaskOps Solutions</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,12 +18,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-font-family:Arial;
-background:white;
-color:#1e293b;
+background:#ffffff;
+color:#111827;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -31,91 +34,105 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(10px);
 position:sticky;
 top:0;
+background:white;
 z-index:100;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 .logo{
 font-size:24px;
-font-weight:bold;
+font-weight:700;
 color:#2563eb;
 }
 
 .menu a{
 margin-left:25px;
 text-decoration:none;
-color:#1e293b;
+color:#111827;
 font-weight:500;
 }
 
 /* HERO */
 
 .hero{
-height:90vh;
+min-height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(135deg,#2563eb,#3b82f6);
+padding:40px;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
 color:white;
-padding:20px;
+position:relative;
+overflow:hidden;
 }
 
 .hero h1{
-font-size:56px;
-margin-bottom:20px;
+font-size:64px;
+max-width:900px;
+line-height:1.1;
 }
 
 .hero p{
+margin-top:20px;
 font-size:20px;
-max-width:700px;
+max-width:650px;
 }
 
 .hero button{
 margin-top:30px;
 padding:14px 30px;
 border:none;
+border-radius:50px;
 background:white;
 color:#2563eb;
-font-weight:bold;
-border-radius:8px;
+font-weight:600;
 cursor:pointer;
 }
 
+/* FLOATING BLOBS */
+
+.blob{
+position:absolute;
+width:400px;
+height:400px;
+background:rgba(255,255,255,0.2);
+border-radius:50%;
+filter:blur(120px);
+}
+
+.blob1{top:-100px;left:-100px;}
+.blob2{bottom:-100px;right:-100px;}
+
 /* SECTION */
 
-.container{
+.section{
 max-width:1200px;
 margin:auto;
-padding:90px 20px;
+padding:120px 20px;
 text-align:center;
 }
 
-h2{
-font-size:38px;
-margin-bottom:40px;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+.section h2{
+font-size:42px;
+margin-bottom:50px;
 }
 
 /* SERVICES */
 
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
 .card{
 background:white;
-padding:35px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
@@ -126,57 +143,37 @@ transform:translateY(-10px);
 .card i{
 font-size:40px;
 color:#2563eb;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
-/* STATS */
-
-.stats{
-background:#2563eb;
-color:white;
-padding:70px 20px;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-max-width:1000px;
-margin:auto;
-}
-
-.stat h3{
-font-size:40px;
-}
-
-/* PROJECTS */
+/* PORTFOLIO */
 
 .project img{
 width:100%;
-border-radius:10px;
+border-radius:15px;
 }
 
-/* CLIENT LOGOS */
+/* CLIENTS */
 
 .clients{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
+flex-wrap:wrap;
 gap:50px;
-margin-top:30px;
+margin-top:40px;
 }
 
 .clients img{
-width:120px;
+width:110px;
 opacity:0.7;
 }
 
-/* TESTIMONIALS */
+/* TESTIMONIAL */
 
 .testimonial{
-background:#f1f5f9;
-padding:30px;
-border-radius:10px;
+background:#f8fafc;
+padding:40px;
+border-radius:20px;
 }
 
 .testimonial img{
@@ -189,44 +186,43 @@ margin-bottom:15px;
 /* CTA */
 
 .cta{
-background:linear-gradient(135deg,#2563eb,#3b82f6);
+background:linear-gradient(135deg,#2563eb,#7c3aed);
 color:white;
-padding:80px 20px;
+padding:120px 20px;
 text-align:center;
+}
+
+.cta h2{
+font-size:42px;
+margin-bottom:20px;
 }
 
 .cta button{
 padding:14px 30px;
 border:none;
+border-radius:50px;
 background:white;
 color:#2563eb;
-border-radius:6px;
-font-weight:bold;
+font-weight:600;
 }
 
 /* CONTACT */
 
-.contact{
-background:#f1f5f9;
-padding:70px;
-border-radius:10px;
-}
-
 .contact input,
 .contact textarea{
 width:100%;
-padding:12px;
+padding:14px;
 margin:10px 0;
 border:1px solid #ddd;
-border-radius:5px;
+border-radius:8px;
 }
 
 .contact button{
-padding:12px 20px;
+padding:14px 25px;
 border:none;
 background:#2563eb;
 color:white;
-border-radius:5px;
+border-radius:8px;
 }
 
 iframe{
@@ -239,23 +235,22 @@ border:0;
 /* FOOTER */
 
 footer{
+padding:30px;
 text-align:center;
-padding:20px;
-background:#1e293b;
+background:#111827;
 color:white;
-margin-top:60px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-nav{
-flex-direction:column;
+.hero h1{
+font-size:42px;
 }
 
-.hero h1{
-font-size:38px;
+nav{
+flex-direction:column;
 }
 
 }
@@ -268,7 +263,7 @@ font-size:38px;
 
 <nav>
 
-<div class="logo">TaskOps Solutions</div>
+<div class="logo">TaskOps</div>
 
 <div class="menu">
 
@@ -280,18 +275,18 @@ font-size:38px;
 
 <section class="hero">
 
-<h1>Build Scalable Digital Products</h1>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
 
-<p>
-Custom software development, automation platforms,
-and modern cloud infrastructure.
-</p>
+<h1>Building Modern Software for Future Businesses</h1>
+
+<p>We design, build and scale digital products using modern technology.</p>
 
 <button>Start Your Project</button>
 
 </section>
 
-<section class="container" id="services">
+<section class="section" id="services">
 
 <h2>Our Services</h2>
 
@@ -299,7 +294,7 @@ and modern cloud infrastructure.
 
 <div class="card">
 <i class="fas fa-code"></i>
-<h3>Custom Software</h3>
+<h3>Software Development</h3>
 </div>
 
 <div class="card">
@@ -313,55 +308,17 @@ and modern cloud infrastructure.
 </div>
 
 <div class="card">
-<i class="fas fa-cloud"></i>
-<h3>Cloud Solutions</h3>
-</div>
-
-<div class="card">
 <i class="fas fa-robot"></i>
 <h3>AI Automation</h3>
 </div>
 
-<div class="card">
-<i class="fas fa-shield-alt"></i>
-<h3>Cybersecurity</h3>
-</div>
-
 </div>
 
 </section>
 
-<section class="stats">
+<section class="section" id="projects">
 
-<div class="stats-grid">
-
-<div class="stat">
-<h3>50+</h3>
-<p>Projects Delivered</p>
-</div>
-
-<div class="stat">
-<h3>20+</h3>
-<p>Global Clients</p>
-</div>
-
-<div class="stat">
-<h3>5+</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h3>24/7</h3>
-<p>Support</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="container" id="projects">
-
-<h2>Recent Projects</h2>
+<h2>Our Work</h2>
 
 <div class="grid">
 
@@ -381,27 +338,23 @@ and modern cloud infrastructure.
 
 </section>
 
-<section class="container" id="clients">
+<section class="section" id="clients">
 
-<h2>Trusted Companies</h2>
+<h2>Trusted by Companies</h2>
 
 <div class="clients">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
 
 </div>
 
 </section>
 
-<section class="container">
+<section class="section">
 
-<h2>Client Testimonials</h2>
+<h2>Testimonials</h2>
 
 <div class="grid">
 
@@ -409,7 +362,7 @@ and modern cloud infrastructure.
 
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
 
-<p>"TaskOps delivered our automation platform efficiently."</p>
+<p>"TaskOps delivered our automation platform perfectly."</p>
 
 <b>Rahul Sharma</b>
 
@@ -419,7 +372,7 @@ and modern cloud infrastructure.
 
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
 
-<p>"Excellent team for building cloud systems."</p>
+<p>"Amazing development team and excellent support."</p>
 
 <b>Sarah Johnson</b>
 
@@ -431,22 +384,20 @@ and modern cloud infrastructure.
 
 <section class="cta">
 
-<h2>Ready to Start Your Project?</h2>
+<h2>Ready to Build Your Product?</h2>
 
 <button>Contact Us</button>
 
 </section>
 
-<section class="container contact" id="contact">
+<section class="section contact" id="contact">
 
 <h2>Contact Us</h2>
 
 <form>
 
 <input type="text" placeholder="Your Name">
-
 <input type="email" placeholder="Email">
-
 <textarea rows="4" placeholder="Project Details"></textarea>
 
 <button>Send Message</button>
