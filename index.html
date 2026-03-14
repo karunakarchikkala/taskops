@@ -315,8 +315,17 @@ cursor:pointer;
 @media(max-width:768px){
 
 nav{
-flex-direction:row;
-justify-content:space-between;
+display:grid;
+grid-template-columns:40px 1fr 40px;
+align-items:center;
+}
+
+.hamburger{
+display:block;
+}
+
+.logo{
+text-align:center;
 }
 
 .menu{
@@ -332,18 +341,15 @@ box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 .menu a{
-margin:10px 0;
+margin:12px 0;
 }
 
 .menu.active{
 display:flex;
 }
 
-.hamburger{
-display:block;
 }
 
-}
 
 /* MOBILE */
 
