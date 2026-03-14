@@ -300,6 +300,51 @@ color:white;
 margin-top:60px;
 }
 
+  .logo img{
+height:40px;
+}
+
+.hamburger{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+/* MOBILE MENU */
+
+@media(max-width:768px){
+
+nav{
+flex-direction:row;
+justify-content:space-between;
+}
+
+.menu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+display:none;
+flex-direction:column;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.menu a{
+margin:10px 0;
+}
+
+.menu.active{
+display:flex;
+}
+
+.hamburger{
+display:block;
+}
+
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -326,15 +371,22 @@ flex-direction:column;
 
 <nav>
 
-<div class="logo">TaskOps</div>
+<div class="logo">
+<img src="logo.png" alt="TaskOps">
+</div>
 
-<div class="menu">
+<div class="menu" id="menu">
 
-<a href="#services">Services</a> <a href="#why">Why Us</a> <a href="#process">Process</a> <a href="#clients">Clients</a> <a href="#contact">Contact</a>
+<a href="#services">Services</a> <a href="#why">Why Us</a> <a href="#clients">Clients</a> <a href="#contact">Contact</a>
 
 </div>
 
+<div class="hamburger" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
 </nav>
+
 
 <section class="hero">
 
@@ -554,6 +606,17 @@ flex-direction:column;
 © 2026 TaskOps Solutions
 
 </footer>
+<script>
+
+function toggleMenu(){
+
+const menu = document.getElementById("menu");
+
+menu.classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 
